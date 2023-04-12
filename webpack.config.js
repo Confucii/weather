@@ -8,6 +8,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Weather App",
+      meta: {
+        "Content-Security-Policy": {
+          "http-equiv": "Content-Security-Policy",
+          content: "upgrade-insecure-requests",
+        },
+      },
     }),
   ],
   output: {
