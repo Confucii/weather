@@ -7,7 +7,7 @@ function buttonFetch(btn, input) {
       const [currentData, forecastData] = await getWeather(input.value);
       renderCurrentWeather(currentData);
     } catch (err) {
-      alert("Incorrect input");
+      return err;
     }
   });
 }

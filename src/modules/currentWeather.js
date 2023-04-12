@@ -30,7 +30,7 @@ export default function renderCurrentWeather(data) {
 
   const tempFeel = document.createElement("p");
   tempFeel.classList.add("temp-feel-current");
-  tempFeel.textContent = `Feels like: ${data.temp_c}\u00B0C`;
+  tempFeel.textContent = `Feels like: ${data.feelslike_c}\u00B0C`;
 
   currentWeather.appendChild(location);
   currentWeather.appendChild(date);
