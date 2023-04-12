@@ -23,8 +23,8 @@ body {
 }
 
 .temp-btn {
-  font-size: 2rem;
-  color: wheat;
+  font-size: 2.5rem;
+  color: #ffd700;
   background: none;
   border: 0;
 }
@@ -35,36 +35,47 @@ body {
 
 .slash {
   font-size: 2rem;
-  color: wheat;
+  color: #ffd700;
+  font-weight: 1000;
 }
 
 .content {
+  padding: 35px;
+  background: linear-gradient(
+    176deg,
+    rgba(29, 28, 28, 1) 0%,
+    rgba(255, 215, 0, 1) 100%
+  );
   flex: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 100px;
 }
 
 .current-weather {
-  width: 430px;
+  background-color: black;
+  width: 500px;
   height: 200px;
-  border: 1px solid black;
+  border: 1px solid #ffd700;
+  color: #ffd700;
   padding: 10px;
   row-gap: 5px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .location-current {
-  width: 200px;
+  width: 300px;
 }
 
 .temp-current {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .temp-feel-current {
@@ -82,17 +93,44 @@ body {
 .img-current {
   width: 100px;
   justify-self: end;
+  align-self: center;
   grid-column: 2/3;
   grid-row: 2/5;
 }
 
 form {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 15px;
+  width: 450px;
 }
 
 form button {
-  width: 60%;
+  background-color: black;
+  border: none;
+  border-radius: 0px 10px 10px 0px;
+}
+
+form button img {
+  width: 50px;
+  display: block;
+  filter: invert(77%) sepia(56%) saturate(1186%) hue-rotate(358deg)
+    brightness(104%) contrast(106%);
+}
+
+form button:active img {
+  filter: invert(100%) sepia(5%) saturate(19%) hue-rotate(185deg)
+    brightness(107%) contrast(100%);
+}
+
+form input {
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  padding: 5px;
+  border: none;
+  border-radius: 10px 0 0px 10px;
+}
+
+input:focus {
+  outline: none;
 }

@@ -1,5 +1,6 @@
 import renderCurrentWeather from "./currentWeather";
 import getWeather from "./weatherAPI";
+import search from "../images/magnify.svg";
 
 function buttonFetch(btn, input) {
   btn.addEventListener("click", async () => {
@@ -19,10 +20,12 @@ export default function renderForm() {
   text.setAttribute("type", "text");
 
   const btn = document.createElement("button");
-  btn.textContent = "See Weather";
   btn.classList.add("fetch");
   btn.setAttribute("type", "button");
   buttonFetch(btn, text);
+  const buttonImg = document.createElement("img");
+  buttonImg.setAttribute("src", search);
+  btn.appendChild(buttonImg);
 
   form.appendChild(text);
   form.appendChild(btn);

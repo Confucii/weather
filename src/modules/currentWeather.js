@@ -2,7 +2,7 @@ export default function renderCurrentWeather(data) {
   const content = document.querySelector(".content");
 
   if (document.querySelector(".current-weather")) {
-    content.removeChild(content.firstChild);
+    content.removeChild(document.querySelector(".current-weather"));
   }
 
   const tempMode = document.querySelector(".chosen").dataset.mode;
@@ -46,5 +46,5 @@ export default function renderCurrentWeather(data) {
   currentWeather.appendChild(tempFeel);
   currentWeather.appendChild(image);
 
-  content.insertBefore(currentWeather, content.firstChild);
+  content.appendChild(currentWeather);
 }

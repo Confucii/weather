@@ -29,7 +29,7 @@ export default function renderHeader() {
 
   const slash = document.createElement("p");
   slash.classList.add("slash");
-  slash.textContent = "\\";
+  slash.textContent = "|";
 
   const buttonFahr = document.createElement("button");
   buttonFahr.setAttribute("data-mode", "f");
