@@ -42,7 +42,8 @@ function processForecastWeatherData(responseData) {
 export default async function getWeather(city) {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=10`
+      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=10`,
+      { mode: "cors" }
     );
     const responseData = await response.json();
     const currentWeather = processCurrentWeatherData(responseData);
