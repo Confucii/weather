@@ -1,9 +1,10 @@
 import getWeather from "./modules/weatherAPI";
-import renderForm from "./modules/form";
+import renderMain from "./modules/main";
+import "./styles/style.css";
 
-renderForm();
+renderMain();
 
 (async () => {
-  const weatherData = await getWeather("Riga");
-  console.log(weatherData);
+  const [currentData, forecastData] = await getWeather("Riga");
+  console.log(currentData, forecastData);
 })();
