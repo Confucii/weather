@@ -1,6 +1,7 @@
 import renderForm from "./form";
 import renderHeader from "./header";
 import getWeather from "./weatherAPI";
+import renderForecast from "./forecast";
 import renderCurrentWeather from "./currentWeather";
 
 function renderMain() {
@@ -13,7 +14,9 @@ function renderMain() {
 
   (async () => {
     const [currentData, forecastData] = await getWeather("Riga");
+    console.log(forecastData);
     renderCurrentWeather(currentData);
+    renderForecast(forecastData);
   })();
 }
 

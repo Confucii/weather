@@ -1,4 +1,5 @@
 import renderCurrentWeather from "./currentWeather";
+import renderForecast from "./forecast";
 import getWeather from "./weatherAPI";
 
 async function changeMode(btn) {
@@ -11,6 +12,7 @@ async function changeMode(btn) {
     document.querySelector(".current-weather").dataset.city
   );
   renderCurrentWeather(currentData);
+  renderForecast(forecastData);
 }
 
 export default function renderHeader() {

@@ -32,7 +32,6 @@ function processForecastWeatherData(responseData) {
       maxtemp_f: forecast.day.maxtemp_f,
       mintemp_c: forecast.day.mintemp_c,
       mintemp_f: forecast.day.mintemp_f,
-      description: forecast.day.condition.text,
       icon: forecast.day.condition.icon,
     });
   });
@@ -43,7 +42,7 @@ function processForecastWeatherData(responseData) {
 export default async function getWeather(city) {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=5`
+      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=10`
     );
     const responseData = await response.json();
     const currentWeather = processCurrentWeatherData(responseData);

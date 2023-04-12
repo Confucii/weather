@@ -1,12 +1,14 @@
 import renderCurrentWeather from "./currentWeather";
 import getWeather from "./weatherAPI";
 import search from "../images/magnify.svg";
+import renderForecast from "./forecast";
 
 function buttonFetch(btn, input) {
   btn.addEventListener("click", async () => {
     try {
       const [currentData, forecastData] = await getWeather(input.value);
       renderCurrentWeather(currentData);
+      renderForecast(forecastData);
     } catch (err) {
       alert("Invalid input!");
     }
