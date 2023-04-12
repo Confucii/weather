@@ -5,8 +5,11 @@ export default function renderCurrentWeather(data) {
     content.removeChild(content.firstChild);
   }
 
+  const tempMode = document.querySelector(".chosen").dataset.mode;
+
   const currentWeather = document.createElement("div");
   currentWeather.classList.add("current-weather");
+  currentWeather.setAttribute("data-city", `${data.city}`);
 
   const location = document.createElement("p");
   location.classList.add("location-current");
@@ -26,11 +29,15 @@ export default function renderCurrentWeather(data) {
 
   const temp = document.createElement("p");
   temp.classList.add("temp-current");
-  temp.textContent = `${data.temp_c}\u00B0C`;
+  temp.textContent = `${
+    data[`temp_${tempMode}`]
+  } \u00B0${tempMode.toUpperCase()}`;
 
   const tempFeel = document.createElement("p");
   tempFeel.classList.add("temp-feel-current");
-  tempFeel.textContent = `Feels like: ${data.feelslike_c}\u00B0C`;
+  tempFeel.textContent = `Feels like: ${
+    data[`feelslike_${tempMode}`]
+  } \u00B0${tempMode.toUpperCase()}`;
 
   currentWeather.appendChild(location);
   currentWeather.appendChild(date);
