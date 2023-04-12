@@ -15,9 +15,9 @@ async function changeMode(btn) {
   renderForecast(forecastData);
 }
 
-export default function renderHeader() {
-  const header = document.createElement("div");
-  header.classList.add("header");
+export default function renderTempButton() {
+  const tempMode = document.createElement("div");
+  tempMode.classList.add("temp-mode");
 
   const buttonCels = document.createElement("button");
   buttonCels.setAttribute("data-mode", "c");
@@ -42,9 +42,9 @@ export default function renderHeader() {
     changeMode(e.currentTarget);
   });
 
-  header.appendChild(buttonCels);
-  header.appendChild(slash);
-  header.appendChild(buttonFahr);
+  tempMode.appendChild(buttonCels);
+  tempMode.appendChild(slash);
+  tempMode.appendChild(buttonFahr);
 
-  document.body.appendChild(header);
+  return tempMode;
 }
