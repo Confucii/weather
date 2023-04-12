@@ -8,7 +8,7 @@ function buttonFetch(btn, input) {
       const [currentData, forecastData] = await getWeather(input.value);
       renderCurrentWeather(currentData);
     } catch (err) {
-      alert(err);
+      alert("Invalid input!");
     }
   });
 }
@@ -18,6 +18,7 @@ export default function renderForm() {
 
   const text = document.createElement("input");
   text.setAttribute("type", "text");
+  text.value = "Riga";
 
   const btn = document.createElement("button");
   btn.classList.add("fetch");
@@ -30,5 +31,9 @@ export default function renderForm() {
   form.appendChild(text);
   form.appendChild(btn);
 
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    btn.dispatchEvent(new Event("click"));
+  });
   return form;
 }
