@@ -1,10 +1,11 @@
+import renderCurrentWeather from "./currentWeather";
 import getWeather from "./weatherAPI";
 
 function buttonFetch(btn, input) {
   btn.addEventListener("click", async () => {
     try {
       const [currentData, forecastData] = await getWeather(input.value);
-      console.log(currentData, forecastData);
+      renderCurrentWeather(currentData);
     } catch (err) {
       alert("Incorrect input");
     }

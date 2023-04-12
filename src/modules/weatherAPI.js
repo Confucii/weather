@@ -9,13 +9,13 @@ function processCurrentWeatherData(responseData) {
     feelslike_c: responseData.current.feelslike_c,
     feelslike_f: responseData.current.feelslike_f,
     description: responseData.current.condition.text,
-    icon: `./icons${responseData.current.condition.icon.slice(20)}`,
+    icon: responseData.current.condition.icon,
     country: responseData.location.country,
     date: format(
       new Date(responseData.location.localtime.split(" ")[0]),
       "dd, MMMM"
     ),
-    name: responseData.location.name,
+    city: responseData.location.name,
   };
 
   return data;
@@ -33,7 +33,7 @@ function processForecastWeatherData(responseData) {
       mintemp_c: forecast.day.mintemp_c,
       mintemp_f: forecast.day.mintemp_f,
       description: forecast.day.condition.text,
-      icon: `./icons${forecast.day.condition.icon.slice(20)}`,
+      icon: forecast.day.condition.icon,
     });
   });
 
